@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Page
 Version  : 2.02
-Release  : 7
+Release  : 8
 URL      : https://cpan.metacpan.org/authors/id/L/LB/LBROCARD/Data-Page-2.02.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LB/LBROCARD/Data-Page-2.02.tar.gz
 Summary  : help when paging through sets of results
