@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Page
 Version  : 2.02
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/L/LB/LBROCARD/Data-Page-2.02.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/L/LB/LBROCARD/Data-Page-2.02.tar.gz
 Summary  : help when paging through sets of results
@@ -25,6 +25,7 @@ use Data::Page;
 Summary: dev components for the perl-Data-Page package.
 Group: Development
 Provides: perl-Data-Page-devel = %{version}-%{release}
+Requires: perl-Data-Page = %{version}-%{release}
 
 %description dev
 dev components for the perl-Data-Page package.
