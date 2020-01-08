@@ -4,13 +4,14 @@
 #
 Name     : perl-Data-Page
 Version  : 2.03
-Release  : 11
+Release  : 12
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Data-Page-2.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Data-Page-2.03.tar.gz
-Summary  : help when paging through sets of results
+Summary  : 'help when paging through sets of results'
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Data-Page-license = %{version}-%{release}
+Requires: perl-Data-Page-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Accessor::Chained::Fast)
 BuildRequires : perl(Sub::Uplevel)
@@ -26,7 +27,6 @@ Summary: dev components for the perl-Data-Page package.
 Group: Development
 Provides: perl-Data-Page-devel = %{version}-%{release}
 Requires: perl-Data-Page = %{version}-%{release}
-Requires: perl-Data-Page = %{version}-%{release}
 
 %description dev
 dev components for the perl-Data-Page package.
@@ -40,8 +40,18 @@ Group: Default
 license components for the perl-Data-Page package.
 
 
+%package perl
+Summary: perl components for the perl-Data-Page package.
+Group: Default
+Requires: perl-Data-Page = %{version}-%{release}
+
+%description perl
+perl components for the perl-Data-Page package.
+
+
 %prep
 %setup -q -n Data-Page-2.03
+cd %{_builddir}/Data-Page-2.03
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -66,7 +76,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Data-Page
-cp LICENCE %{buildroot}/usr/share/package-licenses/perl-Data-Page/LICENCE
+cp %{_builddir}/Data-Page-2.03/LICENCE %{buildroot}/usr/share/package-licenses/perl-Data-Page/f308a3e844152dba82d6236a97b349268414e231
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -79,7 +89,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Data/Page.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -87,4 +96,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-Data-Page/LICENCE
+/usr/share/package-licenses/perl-Data-Page/f308a3e844152dba82d6236a97b349268414e231
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Data/Page.pm
