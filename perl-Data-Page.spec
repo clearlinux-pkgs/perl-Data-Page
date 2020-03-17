@@ -4,7 +4,7 @@
 #
 Name     : perl-Data-Page
 Version  : 2.03
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Data-Page-2.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Data-Page-2.03.tar.gz
 Summary  : 'help when paging through sets of results'
@@ -100,4 +100,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Data/Page.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Data/Page.pm
