@@ -7,7 +7,7 @@
 #
 Name     : perl-Data-Page
 Version  : 2.03
-Release  : 27
+Release  : 28
 URL      : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Data-Page-2.03.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/ET/ETHER/Data-Page-2.03.tar.gz
 Summary  : 'help when paging through sets of results'
